@@ -65,7 +65,7 @@ public class AuthController {
         user.setPassword(passwordEncoder.encode((registerDto.getPassword())));
 
         Role roles = roleRepository.findByName("USER").get();
-        user.setRoles(Collections.singletonList(roles));
+        user.setRoles((roles));
 
         userRepository.save(user);
 
